@@ -14,13 +14,24 @@ import java.util.Arrays;
 
 public class Project {
 	
+	private String userRank;
 	private String projectName;
-	private int[] lifeCycleSteps = new int[25];
+	private int[] lifeCycleSteps;
 	private String UserStory;
 	private ArrayList<String> keywords;
+	
+	//constructor:
+	public Project() {
+		this.lifeCycleSteps = new int[25];
+	}
 
 	// SETTERS:
 
+	//takes string and sets that string as the user rank
+	public void setUserRank(String userRank) {
+		this.userRank = userRank;
+	}
+	
 	// takes a string and sets the name of the project
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
@@ -64,6 +75,13 @@ public class Project {
 	}
 
 	// GETTERS:
+	
+	/* returns the user rank associated with this project
+	 * returns null string if no user rank is set
+	 */
+	public String getUserRank() {
+		return this.userRank;
+	}
 
 	/* returns the project name
 	 * returns a null string if no project name has been set

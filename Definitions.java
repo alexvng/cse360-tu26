@@ -8,8 +8,6 @@
 
 package application;
 
-import java.util.Arrays;
-
 public class Definitions {
 	
 	private final int NUM_PROJECT_DEFINITIONS = 10;
@@ -38,6 +36,9 @@ public class Definitions {
 		userInterruptions = new String[NUM_INTERRUPTIONS];
 		userDefectCategories = new String[NUM_DEFECT_CATEGORIES];
 		
+		for(int i = 0; i < NUM_PROJECT_DEFINITIONS; i++) userProjectDefinitions[i] = new Project();
+		for(int i = 0; i < NUM_LIFE_CYCLE_STEPS; i++) userLifeCycleSteps[i] = new LifeCycleStep();
+		
 		setDefaultDefinitions();
 	}
 	
@@ -47,6 +48,7 @@ public class Definitions {
 	public void setDefaultDefinitions() {
 		
 		//clearing any current definitions
+		/*
 		for(int i = 0; i < NUM_PROJECT_DEFINITIONS; i++) this.userProjectDefinitions[i].clear();
 		for(int i = 0; i < NUM_LIFE_CYCLE_STEPS; i++) this.userLifeCycleSteps[i].clear();
 		Arrays.fill(userEffortCategories, null);
@@ -54,15 +56,16 @@ public class Definitions {
 		Arrays.fill(userDeliverables, null);
 		Arrays.fill(userInterruptions, null);
 		Arrays.fill(userDefectCategories, null);
+		*/
 		
 		//setting predefined project definition values
 		if(NUM_PROJECT_DEFINITIONS > 0) this.userProjectDefinitions[0].setProjectName("Business Project");
-		for(int i = 1; i <= 10; i++) {
-			if(i < NUM_PROJECT_DEFINITIONS) this.userProjectDefinitions[0].setLifeCycleStep(i, i + 16);
+		for(int i = 0; i < 10; i++) {
+			if(i < NUM_PROJECT_DEFINITIONS) this.userProjectDefinitions[0].setLifeCycleStep(i, i + 17);
 		}
 		if(NUM_PROJECT_DEFINITIONS > 1) this.userProjectDefinitions[1].setProjectName("Development Project");
-		for(int i = 1; i <= 16; i++) {
-			if(i < NUM_PROJECT_DEFINITIONS) this.userProjectDefinitions[1].setLifeCycleStep(i, i);
+		for(int i = 0; i < 16; i++) {
+			if(i < NUM_PROJECT_DEFINITIONS) this.userProjectDefinitions[1].setLifeCycleStep(i, i + 1);
 		}
 		
 		//defining all the default definitions from EffortLogger V1 and setting the first user definitions to them
@@ -127,7 +130,7 @@ public class Definitions {
 	 * Returns false for an OOB index.
 	 */
 	public boolean setEffortCategory(int index, String effortCategory) {
-		if(index > 0 && index < NUM_EFFORT_CATEGORIES) {
+		if(index >= 0 && index < NUM_EFFORT_CATEGORIES) {
 			this.userEffortCategories[index] = effortCategory;
 			return true;
 		}
@@ -139,7 +142,7 @@ public class Definitions {
 	 * Returns false for an OOB index.
 	 */
 	public boolean setPlan(int index, String plan) {
-		if(index > 0 && index < NUM_PLANS) {
+		if(index >= 0 && index < NUM_PLANS) {
 			this.userPlans[index] = plan;
 			return true;
 		}
@@ -152,8 +155,8 @@ public class Definitions {
 	 * RETURNS FALSE for index 9 or 10, EVEN IF not OOB, since these indices are reserved for the special definitions "User Defined" and "Other".
 	 */
 	public boolean setDeliverable(int index, String deliverable) {
-		if(index == 9 || index == 10) return false; //reserved indices
-		if(index > 0 && index < NUM_DELIVERABLES) {
+		if(index == 8 || index == 9) return false; //reserved indices
+		if(index >= 0 && index < NUM_DELIVERABLES) {
 			this.userDeliverables[index] = deliverable;
 			return true;
 		}
@@ -165,7 +168,7 @@ public class Definitions {
 	 * Returns false for an OOB index.
 	 */
 	public boolean setInterruption(int index, String interruption) {
-		if(index > 0 && index < NUM_INTERRUPTIONS) {
+		if(index >= 0 && index < NUM_INTERRUPTIONS) {
 			this.userInterruptions[index] = interruption;
 			return true;
 		}
@@ -177,7 +180,7 @@ public class Definitions {
 	 * Returns false for an OOB index.
 	 */
 	public boolean setDefectCategory(int index, String defectCategory) {
-		if(index > 0 && index < NUM_DEFECT_CATEGORIES) {
+		if(index >= 0 && index < NUM_DEFECT_CATEGORIES) {
 			this.userDefectCategories[index] = defectCategory;
 			return true;
 		}

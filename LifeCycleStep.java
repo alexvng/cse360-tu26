@@ -11,8 +11,14 @@ package application;
 public class LifeCycleStep {
 	
 	private String name;
-	private int defaultEC = 0;
-	private int defaultD = 0;
+	private int defaultEC;
+	private int defaultD;
+	
+	//constructor:
+	public LifeCycleStep() {
+		this.defaultEC = 0;
+		this.defaultD = 0;
+	}
 	
 	//SETTERS:
 	
