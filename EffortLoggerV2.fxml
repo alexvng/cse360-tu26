@@ -107,8 +107,71 @@
         </content>
       </Tab>
       <Tab text="DefectConsole">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="67.0" text="1. Select Project" />
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="17.0" prefWidth="750.0" text="Effort Logger Defect Console" textAlignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="469.0" layoutY="67.0" text="Clear this project's Entire Defect Log: " />
+                  <Button layoutX="449.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="244.0" text="Clear Defect Log For Entire Project" />
+                  <Label layoutX="23.0" layoutY="126.0" text="2. Select Defect that you want to edit or create new defect " />
+                  <ComboBox layoutX="27.0" layoutY="152.0" prefHeight="26.0" prefWidth="243.0" promptText="-Defect List-" />
+                  <Button layoutX="442.0" layoutY="152.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="202.0" text="Create new Defect" />
+                  <ComboBox layoutX="27.0" layoutY="91.0" prefHeight="26.0" prefWidth="244.0" />
+                  <Label layoutX="23.0" layoutY="191.0" text="3. Define or Update the Following Defect Attributes: " />
+                  <Label layoutX="31.0" layoutY="216.0" text="Num" />
+                  <Label layoutX="84.0" layoutY="215.0" text="Defect Name: " />
+                  <Text layoutX="39.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="84.0" layoutY="233.0" prefHeight="26.0" prefWidth="248.0" promptText="-Defect Name-" />
+                  <Label layoutX="483.0" layoutY="191.0" text="Status: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="564.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Status-" />
+                  <Button layoutX="425.0" layoutY="232.0" mnemonicParsing="false" text="Open" />
+                  <Button layoutX="519.0" layoutY="233.0" mnemonicParsing="false" text="Close" />
+                  <Button layoutX="615.0" layoutY="232.0" mnemonicParsing="false" text="Reopen" />
+                  <Label layoutX="14.0" layoutY="269.0" text="Defect Symptoms or Causes/Resolution: " />
+                  <TextArea id="Defect_Symptoms_Field" layoutX="23.0" layoutY="288.0" prefHeight="73.0" prefWidth="649.0" promptText="Enter Symptoms/Causes Here" />
+                  <ComboBox layoutX="14.0" layoutY="398.0" prefHeight="26.0" prefWidth="194.0" promptText="-Choose Step- " />
+                  <ComboBox layoutX="253.0" layoutY="398.0" prefHeight="26.0" prefWidth="209.0" promptText="-Chose Step- " />
+                  <ComboBox layoutX="505.0" layoutY="398.0" prefHeight="26.0" prefWidth="190.0" promptText="Choose Type" />
+                  <Label layoutX="14.0" layoutY="371.0" text="Step When Injected:" />
+                  <Label layoutX="273.0" layoutY="371.0" text="Step when Removed: " />
+                  <Label layoutX="508.0" layoutY="371.0" text="Defect Type:" />
+                  <Button id="Add_New_Defect " layoutX="508.0" layoutY="428.0" mnemonicParsing="false" text="Add New Type" />
+                  <TextField id="Defect_Type_Add_Field" layoutX="506.0" layoutY="398.0" prefHeight="26.0" prefWidth="189.0" promptText="-Add Defect Type-" visible="false" />
+                  <Button id="Add_Defect_Button" layoutX="645.0" layoutY="428.0" mnemonicParsing="false" text="Add" visible="false" />
+                  <Label layoutX="22.0" layoutY="446.0" text="Current Effort Logged: " />
+                  <Label layoutX="33.0" layoutY="514.0" text="Effort Points: " />
+                  <Text layoutX="25.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00:00">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="134.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#" wrappingWidth="29.21630859375">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <AnchorPane layoutX="386.0" layoutY="463.0" prefHeight="169.0" prefWidth="342.0" style="-fx-background-color: #c2f2be; -fx-background-color: #ee9595;">
+                     <children>
+                        <Button layoutX="106.0" layoutY="46.0" mnemonicParsing="false" text="Save Updates/Defect" />
+                        <Button layoutX="103.0" layoutY="85.0" mnemonicParsing="false" text="Delete Current Defect" />
+                        <Button layoutX="81.0" layoutY="129.0" mnemonicParsing="false" text="Proceed to Effort Log Console" />
+                        <Text layoutX="-3.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defect is currently saved!  " textAlignment="CENTER" wrappingWidth="351.18505859375" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
          </content>
       </Tab>
       <Tab text="Logs">
