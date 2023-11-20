@@ -16,6 +16,8 @@ public class DefectLog {
 	private String defectCategory;
 	private String status;
 	private boolean fixed;
+	private long timeLogged; 
+	private int effortPoints; 
 	
 	//SETTERS:
 	
@@ -42,7 +44,12 @@ public class DefectLog {
 	public void setFixed(boolean fixed) {
 		this.fixed = fixed;
 	}
-	
+	public void setTimeLogged(long timeLogged) { 
+		this.timeLogged = timeLogged; 
+	}
+	public void setEffortPoints(int effortPoints) { 
+		this.effortPoints = effortPoints; 
+	}
 	//GETTERS:
 	
 	public String getName(){
@@ -67,6 +74,12 @@ public class DefectLog {
 	
 	public String getStatus() {
 		return this.status;
+	}
+	public long getTimeLogged() { 
+		return this.timeLogged; 
+	}
+	public int getEffortPoints() { 
+		return this.effortPoints; 
 	}
 	
 	//METHODS
