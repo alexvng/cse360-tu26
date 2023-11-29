@@ -6,7 +6,7 @@
  * 				container for all data needed to implement defintions window
  */
 
-package application;
+package application.objects;
 
 public class Definitions {
 	

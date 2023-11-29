@@ -5,7 +5,7 @@
  * DESCRIPTION: Log class which holds all log info for a single project
  */
 
-package application;
+package application.objects;
 
 public class Log {
 	

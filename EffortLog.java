@@ -5,7 +5,7 @@
  * DESCRIPTION: EffortLog class which holds all info of a single log for the user
  */
 
-package application;
+package application.objects;
 
 import java.util.Date;
 

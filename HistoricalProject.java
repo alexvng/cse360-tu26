@@ -6,7 +6,7 @@
  * 				intended for specialized use during planning poker.
  */
 
-package application;
+package application.objects;
 
 public class HistoricalProject extends Project{
 	

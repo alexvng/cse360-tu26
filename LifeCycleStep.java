@@ -6,7 +6,7 @@
  * 				Composed into the definitions class
  */
 
-package application;
+package application.objects;
 
 public class LifeCycleStep {
 	

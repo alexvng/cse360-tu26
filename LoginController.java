@@ -23,7 +23,7 @@ public class LoginController {
 	private TextField Password;
 	
 	private long zeroTime;
-	
+	//private Parent rootNode;
 	String user;
 	String pass;
 	
@@ -36,11 +36,25 @@ public class LoginController {
 		if(user.equals("Admin") && pass.equals("Password")) {
 			//Switches to main application if username and password is valid
 			zeroTime = System.currentTimeMillis();
-			root = FXMLLoader.load(getClass().getResource("EffortLoggerV2.fxml"));
+			
+//			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Main.fxml"));
+//			rootNode = fxmlLoader.load(); 
+//			stage.setScene(new Scene(rootNode)); 
+//			stage.show(); 
+
+			try {
+			    root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+			    // Rest of your code...
+			} catch (Exception e) {
+			    e.printStackTrace();
+			}
+
+			//root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+		
 		}else {
 			//Displays Error Message if UserName and Password is not valid
 			Alert error = new Alert(AlertType.ERROR);

@@ -1,4 +1,4 @@
-package application;
+package application.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,29 +23,21 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class PlanningPokerController implements Initializable{
-	@FXML
-	private TextField keywords;
-	@FXML
-	private TextField asA;
-	@FXML
-	private TextField iWant;
-	@FXML
-	private TextField soThat;
-	@FXML
-	private ListView<String> keyWordsListPoker;
-	@FXML
-	private ListView<String> userStoriesPoker;
-	@FXML
-	private ComboBox<String> projectName;
-	@FXML
-	private ListView<String> similarHP;
-	@FXML
-	private ListView<String> pStories;
-	@FXML
-	private ListView<String> pKeyWords;
-	@FXML
-	private Slider weightSlider;
+public class PlanningPokerTabController implements Initializable{
+	@FXML private TextField keywords;
+	@FXML private TextField asA;
+	@FXML private TextField iWant;
+	@FXML private TextField soThat;
+	@FXML private ListView<String> keyWordsListPoker;
+	@FXML private ListView<String> userStoriesPoker;
+	@FXML private ComboBox<String> projectName;
+	@FXML private ListView<String> similarHP;
+	@FXML private ListView<String> pStories;
+	@FXML private ListView<String> pKeyWords;
+	@FXML private Slider weightSlider;
+	
+	@FXML private MainController mainController; 
+
 	
 	private Stage stage;
 	private Scene scene;
@@ -65,6 +57,9 @@ public class PlanningPokerController implements Initializable{
 	String[] names = {"hp1","hp2","hp3"};
 	String projectSelected;
 	
+	public void injectMainController(MainController mainController) { 
+		this.mainController = mainController; 
+	}
 	
 	//Initializes ComboBox with the options
 	@Override

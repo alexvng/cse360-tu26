@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import application.objects.Project;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -47,8 +48,8 @@ public class EffortConsoleController implements Initializable {
 	String []keyWordsSplit;
 	Timer timer = new Timer();
 
-	project historicalProject1 = new project();
-	project historicalProject2 = new project();
+	Project historicalProject1 = new Project();
+	Project historicalProject2 = new Project();
 	
 	String []names = {"Historical Project 1", "Historical Project 2"};	
 	String projectSelected;
