@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="732.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortConsoleController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="732.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortConsoleController">
   <tabs>
       <Tab text="EffortConsole">
         <content>
@@ -141,29 +141,28 @@
                   <Button layoutX="519.0" layoutY="233.0" mnemonicParsing="false" text="Close" />
                   <Button layoutX="615.0" layoutY="232.0" mnemonicParsing="false" text="Reopen" />
                   <Label layoutX="14.0" layoutY="269.0" text="Defect Symptoms or Causes/Resolution: " />
-                  <TextArea id="Defect_Symptoms_Field" layoutX="23.0" layoutY="288.0" prefHeight="73.0" prefWidth="649.0" promptText="Enter Symptoms/Causes Here" />
-                  <ComboBox layoutX="14.0" layoutY="398.0" prefHeight="26.0" prefWidth="194.0" promptText="-Choose Step- " />
-                  <ComboBox layoutX="253.0" layoutY="398.0" prefHeight="26.0" prefWidth="209.0" promptText="-Chose Step- " />
-                  <ComboBox layoutX="505.0" layoutY="398.0" prefHeight="26.0" prefWidth="190.0" promptText="Choose Type" />
-                  <Label layoutX="14.0" layoutY="371.0" text="Step When Injected:" />
-                  <Label layoutX="273.0" layoutY="371.0" text="Step when Removed: " />
-                  <Label layoutX="508.0" layoutY="371.0" text="Defect Type:" />
-                  <Button id="Add_New_Defect " layoutX="508.0" layoutY="428.0" mnemonicParsing="false" text="Add New Type" />
+                  <ComboBox layoutX="16.0" layoutY="334.0" prefHeight="26.0" prefWidth="194.0" promptText="-Choose Step- " />
+                  <ComboBox layoutX="253.0" layoutY="334.0" prefHeight="26.0" prefWidth="209.0" promptText="-Chose Step- " />
+                  <ComboBox layoutX="506.0" layoutY="334.0" prefHeight="26.0" prefWidth="190.0" promptText="Choose Type" />
+                  <Label layoutX="22.0" layoutY="307.0" text="Step When Injected:" />
+                  <Label layoutX="270.0" layoutY="299.0" text="Step when Removed: " />
+                  <Label layoutX="508.0" layoutY="291.0" text="Defect Type:" />
+                  <Button id="Add_New_Defect " layoutX="511.0" layoutY="377.0" mnemonicParsing="false" text="Add New Type" />
                   <TextField id="Defect_Type_Add_Field" layoutX="506.0" layoutY="398.0" prefHeight="26.0" prefWidth="189.0" promptText="-Add Defect Type-" visible="false" />
                   <Button id="Add_Defect_Button" layoutX="645.0" layoutY="428.0" mnemonicParsing="false" text="Add" visible="false" />
-                  <Label layoutX="22.0" layoutY="446.0" text="Current Effort Logged: " />
-                  <Label layoutX="33.0" layoutY="514.0" text="Effort Points: " />
-                  <Text layoutX="25.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00:00">
+                  <Label layoutX="22.0" layoutY="403.0" text="Current Effort Logged: " />
+                  <Label layoutX="33.0" layoutY="455.0" text="Effort Points: " />
+                  <Text layoutX="25.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00:00">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text layoutX="134.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#" wrappingWidth="29.21630859375">
+                  <Text layoutX="131.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#" wrappingWidth="29.21630859375">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <AnchorPane layoutX="386.0" layoutY="463.0" prefHeight="169.0" prefWidth="342.0" style="-fx-background-color: #c2f2be; -fx-background-color: #ee9595;">
+                  <AnchorPane layoutX="353.0" layoutY="412.0" prefHeight="169.0" prefWidth="342.0" style="-fx-background-color: #c2f2be; -fx-background-color: #ee9595;">
                      <children>
                         <Button layoutX="106.0" layoutY="46.0" mnemonicParsing="false" text="Save Updates/Defect" />
                         <Button layoutX="103.0" layoutY="85.0" mnemonicParsing="false" text="Delete Current Defect" />

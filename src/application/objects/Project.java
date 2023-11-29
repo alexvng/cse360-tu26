@@ -1,6 +1,6 @@
-package application;
+package application.objects;
 
-public class project {
+public class Project {
 	String userStories[] = new String[3];
 	String keyWords[] = new String[3];
 	
@@ -35,6 +35,17 @@ public class project {
 		
 		
 	}
+
+	public void setProjectName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setLifeCycleStep(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 
 }

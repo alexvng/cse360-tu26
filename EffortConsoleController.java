@@ -19,7 +19,7 @@ import javafx.scene.control.ListView;
 
 public class EffortConsoleController implements Initializable {
 	
-	@FXML
+	@FXML 
 	private TextField keywords;
 	@FXML
 	private TextField asA;

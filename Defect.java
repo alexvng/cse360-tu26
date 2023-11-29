@@ -9,5 +9,7 @@ public class Defect {
 	private String defectCategory;
 	private String status;
 	private boolean fixed;
+	private long timeLogged; 
+	private int effortPoints;
 	
 }
