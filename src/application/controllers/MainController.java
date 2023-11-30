@@ -9,13 +9,15 @@ public class MainController {
 	@FXML private DefectTabController defectTabController; 
 	@FXML private LogTabController logTabController; 
 	@FXML private DefinitionsTabController definitionsTabController; 
-	@FXML private PlanningPokerTabController planningPokerTabController; 
+	@FXML private PlanningPokerTabController PlanningPokerTabController; 
 	
 	
 	@FXML private void initialize(){ 
 		effortLoggerTabController.injectMainController(this);
 		
 	}
-	
-	
+//	public MainController(){
+//		
+//	}
+//	
 }

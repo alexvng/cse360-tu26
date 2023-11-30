@@ -3,6 +3,25 @@ package application.objects;
 public class Project {
 	String userStories[] = new String[3];
 	String keyWords[] = new String[3];
+	double weight;
+	String name;
+	EffortLogList elist = new EffortLogList();
+	
+	public void addEffortLog(EffortLog el) {
+		elist.addLog(el);
+	}
+	
+	public EffortLogList getEffortLogList() {
+		return this.elist;
+	}
+	
+	public void setName(String temp) {
+		this.name = temp;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
 	
 	public String[] getUserStories() {
 		return this.userStories;
@@ -10,6 +29,14 @@ public class Project {
 	
 	public String[] getKeyWords() {
 		return this.keyWords;
+	}
+	
+	public double getWeight() {
+		return this.weight;
+	}
+	
+	public void setWeight(double weightSet) {
+		weight = weightSet;
 	}
 	
 	public void addUserStories(String story) {		
@@ -35,17 +62,6 @@ public class Project {
 		
 		
 	}
-
-	public void setProjectName(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setLifeCycleStep(int i, int j) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 
 }

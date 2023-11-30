@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.MainController">
+   <children>
+      <TabPane prefHeight="675.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="EffortLog">
+               <content>
+                  <fx:include fx:id="effortLoggerTab" source="EffortLoggerTab.fxml" />
+               </content>
+            </Tab>
+          <Tab text="LogEditor">
+               <content>
+                  <fx:include fx:id="editorTab" source="EditorTab.fxml" />
+               </content>
+          </Tab>
+            <Tab text="DefectLog">
+               <content>
+                  <fx:include fx:id="defectTab" source="DefectTab.fxml" />
+               </content></Tab>
+            <Tab text="Logs">
+               <content>
+                  <fx:include fx:id="logTab" source="LogTab.fxml" />
+               </content></Tab>
+            <Tab text="Definitions">
+               <content>
+                  <fx:include fx:id="definitionsTab" source="DefinitionsTab.fxml" />
+               </content>
+            </Tab>
+            <Tab text="PlanningPoker">
+               <content>
+                  <fx:include fx:id="planningPokerTab" source="PlanningPokerTab.fxml" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

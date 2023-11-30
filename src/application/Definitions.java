@@ -6,7 +6,9 @@
  * 				container for all data needed to implement defintions window
  */
 
-package application.objects;
+package application;
+
+import application.objects.Project;
 
 public class Definitions {
 	
@@ -59,11 +61,11 @@ public class Definitions {
 		*/
 		
 		//setting predefined project definition values
-		if(NUM_PROJECT_DEFINITIONS > 0) this.userProjectDefinitions[0].setName("Business Project");
+		if(NUM_PROJECT_DEFINITIONS > 0) this.userProjectDefinitions[0].setProjectName("Business Project");
 		for(int i = 0; i < 10; i++) {
 			if(i < NUM_PROJECT_DEFINITIONS) this.userProjectDefinitions[0].setLifeCycleStep(i, i + 17);
 		}
-		if(NUM_PROJECT_DEFINITIONS > 1) this.userProjectDefinitions[1].setName("Development Project");
+		if(NUM_PROJECT_DEFINITIONS > 1) this.userProjectDefinitions[1].setProjectName("Development Project");
 		for(int i = 0; i < 16; i++) {
 			if(i < NUM_PROJECT_DEFINITIONS) this.userProjectDefinitions[1].setLifeCycleStep(i, i + 1);
 		}

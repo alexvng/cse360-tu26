@@ -7,7 +7,9 @@
 
 package application.objects;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class EffortLog {
 
@@ -17,7 +19,10 @@ public class EffortLog {
 	private String lifeCycleStep;
 	private String effortCategory;
 	private String effortSubcategory;
-	
+	private int weight;
+	private List<String> keyWords = new ArrayList<>();
+	private List<String> userStories = new ArrayList<>();
+
 	//constructor:
 	public EffortLog(String lifeCycleStep, String effortCategory, String effortSubcategory) {
 		this.date = new Date();
@@ -27,10 +32,28 @@ public class EffortLog {
 		this.effortSubcategory = effortSubcategory;
 	}
 	
+	//Overloaded Constructor
+	public EffortLog(String lifeCycleStep, String effortCategory, String effortSubcategory,int weight) {
+		this.date = new Date();
+		this.startTime = date.getTime();
+		this.lifeCycleStep = lifeCycleStep;
+		this.effortCategory = effortCategory;
+		this.effortSubcategory = effortSubcategory;
+		this.weight = weight;
+	}
+	
 	//SETTERS
 	
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public void addKeyWords(String word){
+		keyWords.add(word);
+	}
+	
+	public void addUserStory(String story){
+		userStories.add(story);
 	}
 	
 	public void setStartTime(long startTime) {
@@ -54,6 +77,14 @@ public class EffortLog {
 	}
 	
 	//GETTERS
+	
+	public List<String> getKeyWords(){
+		return this.keyWords;
+	}
+	
+	public List<String> getUserStories(){
+		return this.userStories;
+	}
 	
 	public Date getDate() {
 		return this.date;
