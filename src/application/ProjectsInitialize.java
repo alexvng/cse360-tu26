@@ -1,7 +1,5 @@
 package application;
 
-import application.objects.Project;
-
 public class ProjectsInitialize {	
 	
 	public static void initializeGlobal() {		

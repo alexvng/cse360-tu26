@@ -23,6 +23,10 @@ public class EffortLog {
 	private List<String> keyWords = new ArrayList<>();
 	private List<String> userStories = new ArrayList<>();
 
+	public EffortLog() {
+		
+	}
+	
 	//constructor:
 	public EffortLog(String lifeCycleStep, String effortCategory, String effortSubcategory) {
 		this.date = new Date();
@@ -43,7 +47,9 @@ public class EffortLog {
 	}
 	
 	//SETTERS
-	
+	public void setWeight(int w) {
+		this.weight = w;
+	}
 	public void setDate(Date date) {
 		this.date = date;
 	}
@@ -77,6 +83,10 @@ public class EffortLog {
 	}
 	
 	//GETTERS
+	
+	public int getWeight() {
+		return this.weight; 
+	}
 	
 	public List<String> getKeyWords(){
 		return this.keyWords;
@@ -115,5 +125,6 @@ public class EffortLog {
 	public long getDeltaTime() {
 		return this.endTime - this.startTime;
 	}
+
 	
 }

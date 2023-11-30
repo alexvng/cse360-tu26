@@ -46,6 +46,7 @@ public class EffortLoggerTabController implements Initializable {
 	long currentTime;
 	boolean paused;
 	
+	String userRaw;
 	String keyWordsRaw;
 	String []keyWordsSplit;
 	Timer timer = new Timer();
@@ -66,12 +67,9 @@ public class EffortLoggerTabController implements Initializable {
 	Project hp1 = GlobalObjects.proj1;
 	Project hp2 = GlobalObjects.proj2;
 	Project hp3 = GlobalObjects.proj3;
-	Project hp4 = GlobalObjects.proj4;
-	Project hp5 = GlobalObjects.proj5;
-	Project hp6 = GlobalObjects.proj6;
-	Project hp7 = GlobalObjects.proj7;
 	ProjectList projList = GlobalObjects.projList;
 		
+	EffortLog e1 = new EffortLog();
 	public void injectMainController(MainController mainController) { 
 		this.mainController = mainController; 
 	}
@@ -79,11 +77,9 @@ public class EffortLoggerTabController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		for(int i=0;i<projList.getProjList().size();i++) {
-			names.add(projList.getProjList().get(i).getName());
-			//System.out.println(projList.getProjList().get(i).getName());
+		for(Project p: projList.getProjList()) {
+			names.add(p.getName());
 		}
-		
 		
 		//Loads options into combo boxes
 		projectName.getItems().addAll(names);
@@ -186,17 +182,32 @@ public class EffortLoggerTabController implements Initializable {
 		//Cancels timer and sends end time for effortlog
 		timer.cancel();
 		Date end = new Date();
-		
+		System.out.println(end);
 		//Creates new effortlog
-		EffortLog e1 = new EffortLog(lifeCycle,effortCategoryString, effortSubCategoryString);
+		e1.setLifeCycleStep(lifeCycle);
+		e1.setDate(now);
+		e1.setEffortSubcategory(effortSubCategoryString);
+		e1.setEffortCategory(effortCategoryString);
+		//e1.addKeyWords(keyWordsRaw);
+		//e1.addUserStory(userRaw);
 		//Sets start and end date of effortlog
 		e1.setDate(now);
 		GlobalObjects.effortLogList.addLog(e1);
 		
-		//System.out.println(e1.getStartTime());
-	
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedTime = dateFormat.format(now);
+		//Adds EffortLog to appropriate Project
+		for(Project p: projList.getProjList()) {
+			if(p.getName().equals(projectSelected)) {
+				System.out.println("Checked");
+				p.getEffortLogList().add(e1);
+				//System.out.println(projectSelected);
+				for(EffortLog n: p.getEffortLogList())
+					System.out.println("1 "+ n.getKeyWords());
+				break;
+			}
+		}
+		
+		//SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //String formattedTime = dateFormat.format(now);
 	
 	}
 	
@@ -209,9 +220,27 @@ public class EffortLoggerTabController implements Initializable {
 	// Event Listener on Button.onAction
 	@FXML
 	public void addUserStory(ActionEvent event) {
-		String userRaw = "As a "+ asA.getText() +", I want " + iWant.getText() + " so that " + soThat.getText();
+		userRaw = "As a "+ asA.getText() +", I want " + iWant.getText() + " so that " + soThat.getText();
 		userStories.getItems().add(userRaw);
-		historicalProject1.addUserStories(userRaw);
+		e1.addUserStory(keyWordsRaw);
+		
+		asA.clear();
+		iWant.clear();
+		soThat.clear();
+		//historicalProject1.addUserStories(userRaw);
+		
+	}
+	@FXML
+	public void clearFields(ActionEvent event) {
+		asA.clear();
+		iWant.clear();
+		soThat.clear();
+		keywords.clear();
+		userStories.getItems().clear();
+		effortCategory.getItems().clear();
+		effortSubCategory.getItems().clear();
+		projectName.getItems().clear();
+		lifeCycleStep.getItems().clear();
 	}
 	
 	// Event Listener on Button.onAction adds key word
@@ -221,8 +250,10 @@ public class EffortLoggerTabController implements Initializable {
 		keyWordsSplit = keyWordsRaw.split("[,]",0);
 		for(int i=0; i<keyWordsSplit.length;i++) {
 			keyWordsList.getItems().add(keyWordsSplit[i]);
-			historicalProject1.addKeyWords(keyWordsSplit[i]);
+			e1.addKeyWords(keyWordsSplit[i]);
+			//historicalProject1.addKeyWords(keyWordsSplit[i]);
 		}
+		keywords.clear();
 	}
 }
 	

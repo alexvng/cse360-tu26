@@ -1,17 +1,20 @@
 package application.objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Project {
 	String userStories[] = new String[3];
 	String keyWords[] = new String[3];
 	double weight;
 	String name;
-	EffortLogList elist = new EffortLogList();
+	List<EffortLog> elist = new ArrayList<>();	
 	
 	public void addEffortLog(EffortLog el) {
-		elist.addLog(el);
+		elist.add(el);
 	}
 	
-	public EffortLogList getEffortLogList() {
+	public List<EffortLog> getEffortLogList() {
 		return this.elist;
 	}
 	

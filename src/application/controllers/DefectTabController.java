@@ -4,7 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class DefectTabController {
-
+	
+		
 	@FXML private MainController mainController; 
 
 	public DefectTabController() {
